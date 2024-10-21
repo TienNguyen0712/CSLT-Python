@@ -1,4 +1,4 @@
-# BAI TAP 1.1 
+# BAI TAP 2.1 
 import math
 # CAU A
 def sont(n):
@@ -79,3 +79,41 @@ if(M(n)):
 else:
     print("Khong la so Mersenne")
 tbNhan(n)
+# BAI TAP 2.2 
+# CAU A
+n = int(input())
+sum = 0, tich = 1
+for i in range(1, n + 1):
+    tich*=i
+    sum+=tich
+print(sum)
+# CAU B
+n = int(input("Nhap so n: "))
+tich = 1, sum = 0
+for i in range(1, n + 1):
+    tich*=(n-i)
+    sum+=tich
+print(sum)
+# CAU C
+n = int(input("Nhap so n: "))
+x = int(input("Nhap so x: "))
+sum = 0
+for i in range(1, n + 1):
+    sum+=i
+print(math.pow(x, n)/sum)
+# CAU D
+n = int(input("Nhap so n: "))
+x = int(input("Nhap so x: "))
+sum = 0
+for i in range(1, n + 1):
+    sum+=(i/i)
+print(math.pow(x, n)/sum)
+# CAU e
+# cau f
+# BAI TAP 2.3
+sum = 0, m = 5
+for i in range(1, 100):
+    sum+=i;
+    if sum < m:
+        d = m - sum
+print(d)
