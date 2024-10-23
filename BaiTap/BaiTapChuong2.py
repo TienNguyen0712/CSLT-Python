@@ -117,3 +117,79 @@ for i in range(1, 100):
     if sum < m:
         d = m - sum
 print(d)
+# BAI TAP 2.4
+n = int(input("Nhap vao so n: "))
+for z in range(1, n+1):
+    for x in range(1, n + 1):
+        for y in range(1, n + 1):
+           if (x < y) and (y < z) and (int(z) == int(x**2 + y**2)):
+               print(str(x) + " " + str(y) + " " + str(z))
+# BAI TAP 2.5
+n = int(input("Nhap ngay: "))
+t = int(input("Nhap thang: "))
+nam = int(input("Nhap nam: "))
+# CAU A
+if n <= 31 and t <= 12:
+    print("Ngay va thang hop le")
+# CAU B
+ngaytieptheo = n + 1
+if(ngaytieptheo > 31):
+    ngaytieptheo = 1
+    t+=1
+    if(t > 12):
+        t = 1
+        nam+=1
+print("Ngay tiep theo la: " + str(ngaytieptheo) + "/" + str(t) + "/" + str(nam))
+# CAU C
+ngaytruocdo = n - 1
+if(ngaytruocdo <= 0):
+    ngaytruocdo = 1
+    t-=1
+    if(t <= 0):
+        t = 1
+        nam-=1
+print("Ngay truoc do la: " + str(ngaytruocdo) + "/" + str(t) + "/" + str(nam))
+# BAI TAP 2.6
+# CAU A
+n = int(input("Nhap ngay: "))
+t = int(input("Nhap thang: "))
+nam = int(input("Nhap nam: "))
+arr = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+sum = 0
+for i in range(0, t-1):
+    sum+=arr[i]
+if(nam % 400 == 0 or nam % 100 != 0 and nam % 4 == 0):
+    print(str(n) + "/" + str(t) + "/" + str(nam) + "la ngay thu " + str(sum+1+n) + " trong nam")
+else:
+    print(str(n) + "/" + str(t) + "/" + str(nam) + "la ngay thu " + str(sum+n) + " trong nam")
+# CAU B 
+n = int(input("Nhap ngay: "))
+t = int(input("Nhap thang: "))
+nam = int(input("Nhap nam: "))
+print("Ngay bat dau nghi huu: " + str(n) + "/" + str(t) + "/" +str(nam + 55))
+# CAU C
+n = int(input("Nhap ngay: "))
+t = int(input("Nhap thang: "))
+nam = int(input("Nhap nam: "))
+print("Ngay bat dau nghi huu: " + str(n) + "/" + str(t) + "/" +str(nam + 49))
+# BAI TAP 2.7
+# CAU A
+tienvay = int(input("Nhap so tien vay: "))
+thang = int(input("Nhap so thang vay: "))
+lai = int(input("Nhap lai suat vay: "))
+tong = tienvay + (tienvay * (lai/100/12) * thang)
+print("So tien phai tra: " + str(tong))
+# CAU B 
+tienvay = int(input("Nhap so tien vay: "))
+thang = int(input("Nhap so thang vay: "))
+lai = int(input("Nhap lai suat vay: "))
+laithang = lai/100/12
+tra_goc_thang = tienvay / thang
+tong_so_tien_tra = 0
+
+for thang in range(1, thang + 1):
+    laivay = tienvay * laithang
+    tong_tra_thang = tra_goc_thang + laivay
+    tong_so_tien_tra += tong_tra_thang
+    tienvay -= tra_goc_thang
+print("Tien phai tra " + str(tong_so_tien_tra))
